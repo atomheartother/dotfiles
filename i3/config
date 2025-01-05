@@ -188,7 +188,7 @@ for_window [class="^.*"] border pixel 0
 # Disable gaps if there's only one window on
 # smart_gaps off
 
-gaps inner 7
+gaps inner 15
 gaps outer 0
 
 #### end of i3-gaps ####
@@ -237,3 +237,6 @@ new_window none
 
 # Switch between AZERTY and QWERTY with alt-shift
 exec --no-startup-id setxkbmap -option grp:alt_shift_toggle us,fr 
+
+# make plexamp always float
+for_window [class="Plexamp"] floating enable

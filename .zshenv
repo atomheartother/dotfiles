@@ -5,3 +5,4 @@
 
 # This doesn't need to be set at i3 boot:
 export ESHELL=/usr/bin/zsh
+export VISUAL="nano"

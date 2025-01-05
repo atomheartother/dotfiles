@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Width = number of columns
+width=$(tput cols)
+if [ $width -ge 80 ]; then
+   width=80
+fi
+# Random dithering method out of 6 methods
+ditMethod=$(echo -ne "ordered2\nordered4\nnone\nordered8\nfstein\nrandom" | shuf -n 1)
+
+if [ $# -ne 1 ]; then
+    # Random filename
+    filename=$(ls ~/Pictures/Sucy/*.{png,jpg} | shuf -n 1)
+else
+    filename="$1"
+fi
+
+# Convert image to text and display it
+img2txt -f utf8 -W $width -d $ditMethod "$filename"

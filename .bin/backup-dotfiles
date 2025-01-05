@@ -1,25 +1,19 @@
 #!/bin/bash
 
-configs=("conky" "dunst" "i3" "nitrogen" "polybar" "rofi" "terminator" "compton")
-
+configs=("dunst" "i3" "nitrogen" "polybar" "rofi" "terminator" "compton" "conky")
 homes=(".bin/" ".zshenv" ".zshrc")
 
-cprogs=()
+rm -rf ~/dotfiles/*
+rm -rf ~/dotfiles/.bin/
 
-for i in "${configs[@]}"
-do
-    :
+mkdir -p ~/dotfiles/
+
+for i in ${configs[@]} ; do :
     cp -r ~/.config/$i ~/dotfiles/
 done
 
-for i in "${homes[@]}"
+for i in ${homes[@]}
 do
     :
     cp -r ~/$i ~/dotfiles/
-done
-
-for i in "${cprogs[@]}"
-do
-    :
-    cp -r ~/Programming/c/$i ~/dotfiles/
 done

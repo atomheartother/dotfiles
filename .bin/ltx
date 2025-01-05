@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Builds a latex file and its bibliography in one command
+if [ $# -ne 1 ]; then
+    echo "Usage: ltx <filename without .tex>"
+    exit
+fi
+
+pdflatex ${1}.tex && biber $1 && pdflatex ${1}.tex

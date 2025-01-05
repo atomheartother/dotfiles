@@ -1,0 +1,5 @@
+#!/bin/bash
+
+plexamp=$(find ~/.local/share/Plexamp -name "plexamp-*.AppImage")
+
+optirun $plexamp

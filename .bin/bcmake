@@ -6,4 +6,4 @@ else
     rm -rf build/*
 fi
 
-cd build && cmake .. && make -j6
+cd build && cmake .. $@ && make -j6
