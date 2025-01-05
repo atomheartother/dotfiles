@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0;
     font-family: IBM Plex Mono, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 15px;
     min-height: 0;
 }
 
@@ -21,44 +21,70 @@ window#waybar {
     background: #323287;
 }
 
-#mode, #clock, #battery {
-    padding: 0 10px;
+#mode, #clock, #battery, #tray, #network, #pulseaudio {
+    padding: 2px 10px;
 }
 
 #mode {
     background: #64727D;
 }
 
-#clock {
-    background-color: #44525D;
+#network {
+  background: #8a37b7;
 }
 
-#battery {
-    color: white;
+#network.disconnected {
+  background: none;
+  color: #8a37b7;
 }
 
-#battery.good {
-    background-color: teal;
+#pulseaudio {
+  background: #c6a059;
+  color: black;
 }
 
-#battery.charging, #battery.full {
-    color: white;
-    background-color: #16964B;
+#pulseaudio.muted {
+  background: none;
+  color: #c6a059;
+}
+
+#battery.charging {
+  color: white;
+}
+
+#battery.full:not(.charging) {
+  color: #16964B;
+}
+
+#battery.charging.full, #battery.plugged {
+  background-color: #16964B;
+}
+
+#battery.good:not(.charging) {
+  color: #3a6bc4;
+}
+
+#battery.charging.good {
+  background-color: #3a6bc4;
 }
 
 #battery.warning:not(.charging) {
-    background: #dd7700;
+    color: #dd3e00;
+}
+
+#battery.charging.warning {
+    background-color: #dd3e00;
 }
 
 @keyframes blink {
     to {
         background-color: #ffffff;
-        color: black;
+        color: #d32e52;
     }
 }
 
 #battery.critical:not(.charging) {
-    background: #f53c3c;
+    background: #d32e52;
     color: white;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -67,11 +93,6 @@ window#waybar {
     animation-direction: alternate;
 }
 
-#network, #pulseaudio {
-    padding: 0 5px;
-    padding: 0 10px;
-}
-
-#network.disconnected {
-    color: gray;
+#battery.critical.charging {
+  background-color: #d32e52;
 }

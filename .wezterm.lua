@@ -14,6 +14,15 @@ config.hide_tab_bar_if_only_one_tab = true
 config.font = wezterm.font 'IBM Plex Mono'
 config.font_size = 14
 
+config.keys = {
+  -- This will create a new split and run your default program inside it
+  {
+    key = 's',
+    mods = 'CTRL|SHIFT',
+    action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+  },
+}
+
 -- and finally, return the configuration to wezterm
 return config
 
