@@ -22,7 +22,7 @@ window#waybar {
 }
 
 #mode, #clock, #battery, #tray, #network, #pulseaudio {
-    padding: 2px 10px;
+    padding: 0px 10px;
 }
 
 #mode {
@@ -40,7 +40,7 @@ window#waybar {
 
 #pulseaudio {
   background: #c6a059;
-  color: black;
+  color: rgba(26, 30, 35, 1);
 }
 
 #pulseaudio.muted {
@@ -52,13 +52,12 @@ window#waybar {
   color: white;
 }
 
-#battery.full:not(.charging) {
-  color: #16964B;
-}
-
-#battery.charging.full, #battery.plugged {
+#battery.full {
+  color: white;
   background-color: #16964B;
 }
+
+
 
 #battery.good:not(.charging) {
   color: #3a6bc4;

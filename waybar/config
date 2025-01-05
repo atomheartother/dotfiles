@@ -2,20 +2,12 @@
     "layer": "top", // Waybar at top layer
     "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 20, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": [],
     "modules-right": ["pulseaudio", "network", "battery", "battery#bat2", "clock", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
     },
     "tray": {
         "icon-size": 18,
@@ -25,26 +17,6 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% "
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
-    },
     "battery": {
         "states": {
             "full": 100,
@@ -52,36 +24,38 @@
             "warning": 30,
             "critical": 10
         },
-        "format": "{capacity}% ♥",
-        "format-charging": "♥ {capacity}%",
-        "format-plugged": "   ♥   ",
-        "format-alt": "{time}",
-        "interval": 1,
+        "format": "<span size=\"large\">{icon}</span> {capacity}%",
+        "format-charging": "<span size=\"large\">󰂄</span> {capacity}%",
+        "format-plugged": "<span size=\"large\"></span> 100%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "interval": 5,
+        "tooltip-format": "{time}",
+        "tooltip-format-plugged": "{cycles} cycles, Health: {health}%"
     },
     "battery#bat2": {
         "bat": "BAT2"
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ",
-        "format-ethernet": "    ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": " Disconnected ",
+        "format-wifi": "<span size=\"x-large\">{icon}</span> {essid}",
+        "format-ethernet": "<span size=\"x-large\">󰲝</span>",
+        "format-linked": "<span size=\"x-large\">󰲝</span> {ifname} (no IP)",
+        "format-disconnected": " <span size=\"x-large\">󰤭</span> off ",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "tooltip-format-wifi": "{signalStrength}% - {ipaddr}",
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "𝅘𝅥𝅮  {volume}%",
-        "format-muted": "𝅘𝅥𝅮  off",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        "format": "<span size=\"x-large\">{icon}</span> {volume}%",
+        "format-muted": "󰖁 off",
+        "format-bluetooth": "<span size=\"large\">󰂯</span> {icon} {volume}%",
+        "format-bluetooth-muted": "<span size=\"x-large\">󰝟</span> off",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            "headphone": "󰋋",
+            "hands-free": "󰋋",
+            "headset": "󰋎",
+            "phone": "󰏲",
+            "portable": "󰏲",
+            "car": "󰄋",
+            "default": ["󰕿", "󰖀", "󰕾"]
         },
         "on-click": "pavucontrol"
     },
