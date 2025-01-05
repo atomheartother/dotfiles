@@ -25,9 +25,9 @@
             "warning": 30,
             "critical": 10
         },
-        "format": "<span size=\"large\">{icon}</span> {capacity}%",
-        "format-charging": "<span size=\"large\">󰂄</span> {capacity}%",
-        "format-plugged-full": "<span size=\"large\"></span>",
+        "format": "<span size=\"large\">{icon}</span> <span weight=\"bold\">{capacity}%</span>",
+        "format-charging": "<span size=\"large\">󰂄</span> <span weight=\"bold\">{capacity}%</span>",
+        "format-plugged-full": "<span size=\"large\">  </span>",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "interval": 5,
         "tooltip-format": "{time}",
