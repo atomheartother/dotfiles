@@ -30,7 +30,7 @@
     font = Hack 11
     foreground_color = "#eeeeec"
     icon_bell = False
-    palette = "#2e3436:#d35a5a:#76a46e:#cbcb36:#d1a773:#c56c7c:#3b83b6:#d3d7cf:#555555:#e88552:#aed6a4:#ffffd3:#a0a2d5:#cba4b4:#e98181:#d8f5f7"
+    palette = "#2e3436:#d35a5a:#76a46e:#cbcb36:#d1a773:#c56c7c:#8bd5c3:#d3d7cf:#555555:#e88552:#aed6a4:#ffffd3:#3b83b6:#cba4b4:#e98181:#d8f5f7"
     scrollback_lines = 1000
     scrollbar_position = hidden
     show_titlebar = False
