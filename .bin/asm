@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]
+then
+    echo "Usage: asm [file]"
+else
+    nasm -f elf64 $1\.S
+    ld -m elf_x86_64 -s -o $1 $1.o
+fi

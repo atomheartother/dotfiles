@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ $# -ne 2 ]; then
+    echo Enter a repo name and a login you fucker c:
+fi
+
+if [ $# -eq 2 ]; then
+    git clone git@git.epitech.eu:/$2/$1
+    echo Now get working, human.
+fi

@@ -1,0 +1,55 @@
+#!/bin/bash
+
+title="Select header extension type: (hh|h|hpp)"
+
+if [ $# -ne 1 ]; then
+    echo "Enter the name of your class, you absolute moron"
+else
+    echo "$title"
+    read ext
+    name="$1"
+    echo "#pragma once" >> $name.$ext
+    echo "" >> $name.$ext
+    echo "class		$name" >> $name.$ext
+    echo "{">> $name.$ext
+    echo "public:" >> $name.$ext
+    echo "  $name();" >> $name.$ext
+    echo "  ~$name();" >> $name.$ext
+    echo "  $name(const $name& src);" >> $name.$ext
+    echo "  $name&	operator=(const $name& src);" >> $name.$ext
+    echo "" >> $name.$ext
+    echo "private:" >> $name.$ext
+    echo "" >> $name.$ext
+    echo "};" >> $name.$ext
+    echo "" >> $name.$ext
+
+    echo "#include \"$name.$ext\"" >> $name.cpp
+    echo ""  >> $name.cpp
+    echo "$name::$name()" >> $name.cpp
+    echo "{" >> $name.cpp
+    echo "" >> $name.cpp
+    echo "}" >> $name.cpp
+
+    echo ""  >> $name.cpp
+    
+    echo "$name::$name(const $name& src)" >> $name.cpp
+    echo "{" >> $name.cpp
+    echo "}" >> $name.cpp
+
+    echo ""  >> $name.cpp
+
+    
+    echo "$name&	$name::operator=(const $name& src)" >> $name.cpp
+    echo "{" >> $name.cpp
+    echo "  if (&src != this)" >> $name.cpp
+    echo "    {" >> $name.cpp
+    echo "    }" >> $name.cpp
+    echo "  return *this;" >> $name.cpp
+    echo "}" >> $name.cpp
+
+    echo ""  >> $name.cpp
+
+    echo "$name::~$name()" >> $name.cpp
+    echo "{" >> $name.cpp
+    echo "}" >> $name.cpp
+fi

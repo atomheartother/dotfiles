@@ -1,0 +1,13 @@
+#!/bin/bash
+
+make fclean
+git add --all
+
+if [ $# -eq 0 ]; then
+git commit -am "Automated commit, no comment"
+elif [ $# -ge 1 ]; then
+git commit -am "${1}"
+fi
+
+git push origin master
+echo I pushed them all, are you proud? ^///^

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+IDAPATH="/home/navenn_t/Programming/secu/IDA/IDA/"
+IDAFILE="idaq64.exe"
+
+if [ $# -ge 1 ] && [ $1 -eq '32' ]
+then
+    IDAFILE='idaq.exe'
+fi
+
+wine $IDAPATH$IDAFILE 

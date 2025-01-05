@@ -1,0 +1,11 @@
+asm:		Compile assembly fast
+badmalloc:	LD_PRELOAD a malloc that returns NULL. Source contained in data/
+gitclone:	Quick pull an epitech repo through blih.
+mkcpp:		C++ made easy
+pping:		Quick ping to google
+prepdir:	Loads C library, includes, Makefile in current folder
+preprepo:	Creates a repo with blih, asks if you want to clone it
+quickpush:	Commit and push data fast
+rma:		mr_clean
+sqlstart:	ARCH ONLY - starts mariadb
+sqlserv:	ARCH ONLY - start/stop server
