@@ -144,3 +144,9 @@
 [NetworkManager]
     appname = NetworkManager
     new_icon = network-wireless
+
+[Firefox Developer Edition]
+   appname = "Firefox Developer Edition"
+   background = "#ffffff"
+   foreground = "#fa2532"
+   new_icon = "Firefox Developer Edition"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-configs=("dunst" "i3" "nitrogen" "polybar" "rofi" "terminator" "compton" "conky")
+configs=("dunst" "i3" "nitrogen" "polybar" "rofi" "terminator" "compton")
 homes=(".bin/" ".zshenv" ".zshrc")
 
 rm -rf ~/dotfiles/*

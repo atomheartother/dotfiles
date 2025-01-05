@@ -97,14 +97,9 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# Set workspace names
-set $workspace1 "1|"
-set $workspace2 "2|"
-set $workspace10 "10|♪"
-
 # switch to workspace
-bindsym $mod+1 workspace $workspace1
-bindsym $mod+2 workspace $workspace2
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
@@ -112,15 +107,15 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace $workspace10
+bindsym $mod+0 workspace 10
 
 # Switch to next/previous workspace
 bindsym $mod+Ctrl+Left workspace prev 
 bindsym $mod+Ctrl+Right workspace next
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $workspace1
-bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
@@ -128,7 +123,7 @@ bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace $workspace10
+bindsym $mod+Shift+0 move container to workspace 10
 
 
 # Workspace-specific applications
@@ -177,7 +172,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10 # decrease screen
 bindsym $mod+r mode "resize"
 
 # Lock on Ctrl+Mod+L
-bindsym control+mod1+l exec --no-startup-id i3lock -i ~/Pictures/wallpapers/dunes.png -t
+bindsym control+mod1+l exec --no-startup-id betterlockscreen -l
 
 # Print area
 bindsym Print exec --no-startup-id sleep 0.1 && gnome-screenshot --area
@@ -193,31 +188,34 @@ for_window [class="^.*"] border pixel 0
 # Disable gaps if there's only one window on
 # smart_gaps off
 
-gaps inner 5
+gaps inner 0
 gaps outer 0
 
 #### end of i3-gaps ####
 
 # Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
-bar {
-        # status_command i3status -c ~/.config/i3/i3status.conf
-        # separator_symbol "/"
-        status_command ~/.config/conky/conky.sh
-        font pango:DejaVu Sans Mono 8, FontAwesome 8
-	      position top
-      colors {
-            separator #666666
-            background #222222
-            statusline #dddddd
-            focused_workspace #D95763 #D95763  #ffffff
-            active_workspace #333333 #333333 #ffffff
-            inactive_workspace #333333 #333333 #888888
-            urgent_workspace #2f343a #D69045 #ffffff
-      }
-}
+# bar {
+#        # status_command i3status -c ~/.config/i3/i3status.conf
+#        # separator_symbol "/"
+#        status_command ~/.config/conky/conky.sh
+#        font pango:DejaVu Sans Mono 8, FontAwesome 8
+# 	      position top
+#      colors {
+#            separator #666666
+#            background #222222
+#            statusline #dddddd
+#            focused_workspace #D95763 #D95763  #ffffff
+#            active_workspace #333333 #333333 #ffffff
+#            inactive_workspace #333333 #333333 #888888
+#            urgent_workspace #2f343a #D69045 #ffffff
+#      }
+# }
+
+# Compton, for compositing
+exec --no-startup-id compton --config ~/.config/compton/compton.conf
 
 # Starts polybar
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Wallpaper
 exec --no-startup-id nitrogen --restore
@@ -227,9 +225,6 @@ exec --no-startup-id nm-applet
 
 # Start bluetooth applet
 exec --no-startup-id blueman-applet
-
-# Compton, for compositing
-exec --no-startup-id compton --config ~/.config/compton/compton.conf
 
 # Dunst for notifications
 exec --no-startup-id dunst
