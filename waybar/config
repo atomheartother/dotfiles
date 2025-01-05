@@ -18,6 +18,7 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "battery": {
+        "full-at": 98,
         "states": {
             "full": 100,
             "good": 80,
@@ -26,7 +27,7 @@
         },
         "format": "<span size=\"large\">{icon}</span> {capacity}%",
         "format-charging": "<span size=\"large\">󰂄</span> {capacity}%",
-        "format-plugged-full": "<span size=\"large\"></span> full",
+        "format-plugged-full": "<span size=\"large\"></span>",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "interval": 5,
         "tooltip-format": "{time}",
@@ -54,6 +55,7 @@
             "car": "󰄋",
             "default": ["󰕿", "󰖀", "󰕾"]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "on-click-right": "blueman-manager",
     },
 }
