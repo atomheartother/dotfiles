@@ -1,0 +1,20 @@
+sort=+time
+default-timeout=2500
+padding=15
+border-size=0
+font=IBM Plex Sans Regular
+
+[app-name="discord"]
+background-color=#36393e
+
+[app-name="qBittorrent"]
+background-color=#ffffff
+text-color=#4280c2
+
+[app-name="FileZilla"]
+background-color=#ffffff
+text-color=#940000
+
+[app-name="Spotify"]
+background-color=#444444
+text-color=#1db954
