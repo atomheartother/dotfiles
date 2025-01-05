@@ -5,7 +5,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": [],
-    "modules-right": ["pulseaudio", "network", "battery", "battery#bat2", "clock", "tray"],
+    "modules-right": ["pulseaudio", "network", "battery", "clock", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -26,14 +26,11 @@
         },
         "format": "<span size=\"large\">{icon}</span> {capacity}%",
         "format-charging": "<span size=\"large\">󰂄</span> {capacity}%",
-        "format-plugged": "<span size=\"large\"></span> 100%",
+        "format-plugged-full": "<span size=\"large\"></span> full",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "interval": 5,
         "tooltip-format": "{time}",
         "tooltip-format-plugged": "{cycles} cycles, Health: {health}%"
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
     },
     "network": {
         "format-wifi": "<span size=\"x-large\">{icon}</span> {essid}",

@@ -52,12 +52,14 @@ window#waybar {
   color: white;
 }
 
-#battery.full {
+#battery.full.discharging {
+  color: #16964B;
+}
+
+#battery.full:not(.discharging) {
   color: white;
   background-color: #16964B;
 }
-
-
 
 #battery.good:not(.charging) {
   color: #3a6bc4;
