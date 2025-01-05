@@ -2,7 +2,7 @@
   borderless = True
   enabled_plugins = APTURLHandler, OpenAnyFile, LaunchpadCodeURLHandler, LaunchpadBugURLHandler
   inactive_color_offset = 1.0
-  title_receive_bg_color = "#729fcf"
+  title_receive_bg_color = "#58a3bb"
   title_transmit_bg_color = "#75507b"
 [keybindings]
   next_tab = <Primary><Shift>Up
@@ -20,16 +20,16 @@
 [profiles]
   [[default]]
     background_color = "#2e3436"
-    background_darkness = 0.97
+    background_darkness = 1.0
     background_type = transparent
     backspace_binding = automatic
     copy_on_selection = True
-    cursor_color = "#fe4c4c"
+    cursor_color = "#ff8989"
     cursor_color_fg = False
-    font = Hack 11
+    font = Hack 14
     foreground_color = "#f3efe2"
     icon_bell = False
-    palette = "#2e3436:#d55555:#4a7f34:#c3973c:#567edb:#b16286:#287d68:#a89984:#928374:#f69a84:#92b37b:#e1ba74:#90a9e8:#d3869b:#bcdebd:#ebdbb2"
+    palette = "#2e3436:#d55555:#4a7f34:#c3973c:#567edb:#b16286:#287d68:#a89984:#928374:#f69a84:#92b37b:#e1ba74:#90a9e8:#d3869b:#bcdebd:#e9cb71"
     scrollback_lines = 1000
     scrollbar_position = hidden
     show_titlebar = False

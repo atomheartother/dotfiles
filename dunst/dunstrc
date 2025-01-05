@@ -153,6 +153,11 @@
  
  [Plexamp]
     appname = "Electron"
-    background = "#343B45"
+    background = "#272c33"
     foreground = "#cc7b19"
  
+
+[Spotify]
+    appname = "Spotify"
+    background = "#444444"
+    foreground = "#1db954"
