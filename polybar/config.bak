@@ -17,19 +17,22 @@
 ;==========================================================
 
 [colors]
-background = #2E2121
-foreground = #bde3d4
+;background = ${xrdb:color0:#222}
+;background = #041d22
+background = #2e3134
+;background-alt = #0c2c33
+#foreground = ${xrdb:color7:#222}
+foreground = #dcf6e5
 foreground-alt = #2c8b6c
-primary = #d55555
-primary-alt = #f2c2a6
+primary = #be2c43
 secondary = #31C9CC
 alert-bg = #77E7ED
 alert-fg = #222
 date = #5B66E3
 cpu = #B061CF
-batteryfull = #5ea9c0
-batterycharging = #ecf2cc
-batterydischarging = #f3a893
+batteryfull = #7DFFAA
+batterycharging = #FF7DD2
+batterydischarging = #F7F36A
 
 [size]
 padding = 1
@@ -60,8 +63,8 @@ padding-right = ${size.padding}
 module-margin-left = ${size.margin}
 module-margin-right = ${size.margin}
 
-; font-0 = Hack:pixelsize=9;1
-font-0 = DejaVu Sans Mono:pixelsize=10;1
+font-0 = Hack:pixelsize=9;1
+;font-0 = DejaVu Sans:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = FontAwesome:pixelsize=10;1
 
@@ -212,7 +215,7 @@ format-muted = [muted]
 label-muted-foreground = #666
 
 bar-volume-width = 12
-bar-volume-foreground-0 = ${colors.primary}
+bar-volume-foreground-0 = ${colors.secondary}
 bar-volume-gradient = true
 bar-volume-indicator = "o"
 bar-volume-indicator-font = 2
@@ -220,7 +223,7 @@ bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.primary-alt}
+bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery

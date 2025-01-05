@@ -5,11 +5,14 @@ dotfilePath= home + "dotfiles/"
 
 def backup(linkTarget, linkLocation = None, linkPrefix=(home + ".config/")):
     print(linkTarget, linkLocation, linkPrefix)
+    if linkLocation != None:
+        destination = linkPrefix + linkLocation
+    else:
+        destination = linkPrefix + linkTarget
     try :
-        if linkLocation != None:
-            os.symlink(dotfilePath + linkTarget, linkPrefix + linkLocation)
-        else:
-            os.symlink(dotfilePath + linkTarget, linkPrefix + linkTarget)
+            if os.path.exists(destination) and os.path.isDir(destination):
+                os.rename(destination, destination + ".bak")
+            os.symlink(dotfilePath + linkTarget, destination)
     except:
         return
 

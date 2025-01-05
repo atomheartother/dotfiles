@@ -7,14 +7,16 @@ rofi.matching: normal
 rofi.padding:	 350
 rofi.fullscreen: true
 rofi.line-margin: 10
-rofi.columns: 1
+rofi.columns: 3
 rofi.separator-style: none
 rofi.hide-scrollbar: true
 
 ! Note: Because of a bug in the latest version, alpha colors now go:
-! AAGGBBRR
+! AARRGGBB
 
 ! Colors:           bg         border     separator
-rofi.color-window:  #70101010, #00000000, #00000000
+rofi.color-window:  #B0101010, #00000000, #00000000
 ! Colors:    	      bg	       fg         bgalt      hlbg       hl    
-rofi.color-normal:  #00000000, #f3f4f5,   #00000000, #00000000, #E30000
+rofi.color-normal:  #00000000, #f3f4f5,   #00000000, #00000000, #d55555
+
+modi: window,run,combi

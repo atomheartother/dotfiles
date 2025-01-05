@@ -19,7 +19,7 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#2e3436"
+    background_color = "#212121"
     background_darkness = 0.97
     background_type = transparent
     backspace_binding = automatic
@@ -27,9 +27,9 @@
     cursor_color = "#fe4c4c"
     cursor_color_fg = False
     font = Hack 11
-    foreground_color = "#f3efe2"
+    foreground_color = "#eeeeec"
     icon_bell = False
-    palette = "#2e3436:#d55555:#4a7f34:#c3973c:#567edb:#b16286:#287d68:#a89984:#928374:#f69a84:#92b37b:#e1ba74:#90a9e8:#d3869b:#bcdebd:#ebdbb2"
+    palette = "#2e3436:#d35a5a:#76a46e:#cbcb36:#d1a773:#c56c7c:#8bd5c3:#d3d7cf:#555555:#e88552:#aed6a4:#ffffd3:#3b83b6:#cba4b4:#e98181:#d8f5f7"
     scrollback_lines = 1000
     scrollbar_position = hidden
     show_titlebar = False
@@ -46,7 +46,7 @@
     font = Hack 10
     foreground_color = "#ebdbb2"
     icon_bell = False
-    palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
     scrollbar_position = hidden
     show_titlebar = False
     use_system_font = False
