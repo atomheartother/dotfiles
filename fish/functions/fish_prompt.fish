@@ -1,1 +1,1 @@
-/home/navenn_t/.local/share/omf/themes/krisleech/fish_prompt.fish
+/home/navenn_t/.local/share/omf/themes/neolambda/fish_prompt.fish

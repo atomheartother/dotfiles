@@ -14,18 +14,17 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term terminator
+set $term wezterm
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu bemenu-run -p ">" --fn "IBM Plex Mono 10"
-
+set $menu j4-dmenu-desktop --dmenu='bemenu run -i --fn "IBM Plex Mono 32" -p "" --scb "#00000000" --scf "#00000000" --ff "#00000000" --fb "#00000000" --nb "#00000000" --hb "#00000000"  --sb "#00000000" -l 10 -M 100 --cf "#00000000" --ff "#FFFFFF" --fb "#00000000" --ab "#00000000"' --term='terminator'
 set $wpDir /usr/share/backgrounds/wallpapers
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $wpDir/wired.png fill
+output * bg `ls $wpDir/* | sort -R | head -n 1` fill
 #
 # Example configuration:
 #
@@ -47,7 +46,7 @@ output * bg $wpDir/wired.png fill
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-bindsym Ctrl+$mod+l exec --no-startup-id swaylock -i $wpDir/wired.png
+bindsym $mod+Ctrl+l exec swaylock -i $(ls $wpDir/* | sort -R | head -n 1)
 
 ### Input configuration
 #
@@ -63,9 +62,11 @@ bindsym Ctrl+$mod+l exec --no-startup-id swaylock -i $wpDir/wired.png
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-input "TPS/2 Elantech TrackPoint" {
-	tap enabled
-#	natural_scroll enabled
+input "2:14:ETPS/2_Elantech_Touchpad" {
+    middle_emulation disabled
+    tap enabled
+    tap_button_map lrm
+    dwt disabled
 }
 
 ### Key bindings
@@ -79,7 +80,7 @@ input "TPS/2 Elantech TrackPoint" {
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu -p ">"
+    bindsym $mod+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -172,6 +173,7 @@ input "TPS/2 Elantech TrackPoint" {
 
 # Gaps
 gaps inner 10
+smart_gaps on
 
 # Remove window titlebar and border
 for_window [class="^.*"] border none
@@ -238,7 +240,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 
-bindsym --release Print exec grim -g \"$(slurp)" - | wl-copy
+bindsym --release Print exec grim -g \"$(slurp)\" - | wl-copy
 bindsym --release Ctrl+Print exec grim - | wl-copy
 
 # Sreen brightness controls
@@ -246,9 +248,12 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10 # increase screen b
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10 # decrease screen brightness
 
 # Switch between fr and us
-exec --no-startup-id setxkbmap -option grp:alt_shift_toggle us,fr 
+exec --no-startup-id setxkbmap -option grp:alt_shift_toggle us,fr
 
 # Notifications with mako
 exec mako
 
 include /etc/sway/config.d/*
+
+# output HDMI-A-1 pos 0 0
+# output eDP-1 pos 1920 600

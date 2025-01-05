@@ -1,0 +1,1 @@
+/home/navenn_t/Programming/Personal/bend-vim/syntax/bend.vim
