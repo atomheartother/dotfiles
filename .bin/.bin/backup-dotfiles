@@ -1,6 +1,6 @@
 #!/bin/bash
 
-configs=("conky" "dunst" "i3" "nitrogen" "polybar" "rofi" "terminator")
+configs=("conky" "dunst" "i3" "nitrogen" "polybar" "rofi" "terminator" "compton")
 
 homes=(".bin/" ".zshenv" ".zshrc")
 

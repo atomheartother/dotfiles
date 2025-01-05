@@ -1,0 +1,27 @@
+conky.config = {
+    background = false,
+    out_to_x = false,
+    out_to_console = true,
+    update_interval = 0.5,
+    total_run_times = 0,
+    use_spacer = "none"
+}
+
+home = os.getenv("HOME")
+dofile(home .. '/.config/conky/' .. 'helper.lua')
+dofile(home .. '/.config/conky/' .. 'parts.lua')
+
+enabled = ''
+  .. parts.cpu0 .. ','
+  .. parts.volume .. ','
+  .. parts.battery .. ','
+  .. helper.separator() .. ','
+  .. parts.date .. ','
+  .. parts.time .. ','
+  .. helper.separator()
+
+conky.text = [[ 
+[
+  ]] .. enabled .. [[
+],
+]]
