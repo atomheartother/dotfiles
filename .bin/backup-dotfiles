@@ -4,7 +4,7 @@ configs=("conky" "dunst" "i3" "nitrogen" "polybar" "rofi" "terminator" "compton"
 
 homes=(".bin/" ".zshenv" ".zshrc")
 
-cprogs=("batteryd")
+cprogs=()
 
 for i in "${configs[@]}"
 do

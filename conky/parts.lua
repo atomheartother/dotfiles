@@ -14,8 +14,9 @@ parts.time = helper.value('${time %H:%M }', nil)
 -- Date
 parts.date = helper.value('${time %D}', nil)
 
-local volume_command = [[amixer sget Master,0 | egrep -o '([0-9]+%)' | head -n 1 | sed ':a;N;$!ba;s/\n/ /g']]
-parts.volume = helper.common('', nil, "${execi 1 " .. volume_command .. "}")
+-- local volume_command = [[amixer sget Master,0 | egrep -o '([0-9]+%)' | head -n 1 | sed ':a;N;$!ba;s/\n/ /g']]
+local volume_command = [[pactl list sinks | grep '^]] .. "[[:space:]]Volume:' |" .. [[head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,']]
+parts.volume = helper.common('', nil, "${execi 1 " .. volume_command .. "}%")
 
 
 -- CPU 0
