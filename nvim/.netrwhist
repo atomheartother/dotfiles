@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/navenn_t/Programming/Personal/QTweet'
+let g:netrw_dirhist_7='/home/navenn_t/Programming/Personal/QTweet/src'
+let g:netrw_dirhist_6='/home/navenn_t/Programming/Personal/QTweet'
+let g:netrw_dirhist_5='/home/navenn_t/Programming/Blackfoot/bugali/bugali-web/src'
+let g:netrw_dirhist_4='/home/navenn_t/Programming/Blackfoot/bugali/bugali-web'
+let g:netrw_dirhist_3='/home/navenn_t/Programming/Blackfoot/bugali/bugali-web/src'
+let g:netrw_dirhist_2='/home/navenn_t/Programming/Blackfoot/bugali/bugali-web'
+let g:netrw_dirhist_1='/home/navenn_t/Programming/Blackfoot/bugali/bugali-web/deps'
+let g:netrw_dirhist_0='/home/navenn_t/Programming/Blackfoot/bugali/bugali-web/deps/bugalisequencer'
+let g:netrw_dirhist_9='/home/navenn_t/Programming/Blackfoot/bugali/bugali-web/deps/bugalisequencer/src'
