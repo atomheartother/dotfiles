@@ -17,3 +17,7 @@ export PATH=${PATH}:${HOME}/.gem/ruby/2.4.0/bin
 export PATH=${HOME}/.bin:$PATH
 # Add go binaries
 export PATH=${PATH}:${GOPATH}/bin
+
+# Use Clang instead of GCC by default
+# export CC=/usr/bin/clang
+# export CXX=/usr/bin/clang++

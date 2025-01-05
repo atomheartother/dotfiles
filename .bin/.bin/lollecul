@@ -1,0 +1,15 @@
+#!/bin/bash
+
+rotate=0
+
+while [ 42 ]
+do
+    xrandr -o $rotate
+    rotate=$((rotate+1))
+    sleep 1
+
+    if [ $rotate -gt 3 ]
+	then
+	rotate=0
+    fi
+done

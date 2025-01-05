@@ -1,0 +1,25 @@
+#!/bin/bash
+
+configs=("conky" "dunst" "i3" "nitrogen" "polybar" "rofi" "terminator")
+
+homes=(".bin/" ".zshenv" ".zshrc")
+
+cprogs=("batteryd")
+
+for i in "${configs[@]}"
+do
+    :
+    cp -r ~/.config/$i ~/dotfiles/$i
+done
+
+for i in "${homes[@]}"
+do
+    :
+    cp -r ~/$i ~/dotfiles/$i
+done
+
+for i in "${cprogs[@]}"
+do
+    :
+    cp -r ~/Programming/c/$i ~/dotfiles/$i
+done
