@@ -24,7 +24,7 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "%s\n%b"
+    format = "<b>%s</b>\n%b"
 
     browser = /usr/bin/firefox-developer-edition
 
@@ -79,7 +79,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x25-30+35"
+    geometry = "450x25-30+29"
     horizontal_padding = 20
     padding = 10
 
@@ -92,7 +92,7 @@
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
-    shrink = no
+    shrink = yes
 
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
@@ -126,6 +126,11 @@
 
 [Discord]
     appname = Discord
-    format = "<b>%s</b>\n%b"
     background = "#36393e"
     new_icon = Discord
+
+[qBittorrent]
+    appname = qBittorrent
+    background = "#ffffff"
+    foreground = "#4280c2"
+    new_icon = qBittorrent
