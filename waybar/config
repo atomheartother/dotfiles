@@ -45,7 +45,7 @@
     },
     "pulseaudio": {
         "format": "<span size=\"x-large\">{icon}</span> {volume}%",
-        "format-muted": "󰖁 off",
+        "format-muted": "<span size=\"x-large\">󰖁</span> off",
         "format-bluetooth": "<span size=\"large\">󰂯</span> {icon} {volume}%",
         "format-bluetooth-muted": "<span size=\"x-large\">󰝟</span> off",
         "format-icons": {
