@@ -17,6 +17,7 @@ My favorite shortcuts:
 - `g d`: **g**o to **d**efinition of symbol.
 - `g r`: **g**o to **r**eferences to symbol.
 - `Space c a`: Show **c**ode **a**ctions which can solve an error.
+- `Space r n`: **r**e**n**ame a symbol.
 
 ## Sway
 My Sway setup is pretty simple. Highlights:
