@@ -4,5 +4,5 @@ if pgrep -x "xfreerdp" > /dev/null
 then
     pkill xfreerdp
 else
-    xfreerdp ~/.rdp/ec2-34-243-24-207.eu-west-1.compute.amazonaws.com.rdp /p:'h.qJ76@r7;7DNq!JUP.EiuUGZ5z@BdzW' /f
+    xfreerdp ~/.rdp/ec2-34-243-24-207.eu-west-1.compute.amazonaws.com.rdp /p:'h.qJ76@r7;7DNq!JUP.EiuUGZ5z@BdzW' -toggle-fullscreen /f
 fi
