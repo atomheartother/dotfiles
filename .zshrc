@@ -2,19 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/navenn_t/.oh-my-zsh
+export ZSH=/home/navenn_t/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="theunraveler"
-
-export JEKYLL_GITHUB_TOKEN=b49eb052d3c9d7c9734328c54a41e3b1da56f453
-
-export LC_ALL=en_US.UTF-8
-export LANG=en_us.UTF-8
-export GOPATH="/home/navenn_t/.go/"
-export PATH=/home/navenn_t/.gem/ruby/2.4.0/bin:/home/navenn_t/.bin:$PATH
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -87,8 +80,8 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias ne='emacs'
+alias emacs='emacsclient --alternate-editor="" -nw'
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
