@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ne='emacs'
-alias emacs='emacsclient --alternate-editor="" -nw'
+#alias emacs='emacsclient --alternate-editor="" '
 
 # Colored mans
 man() {
@@ -98,3 +98,6 @@ man() {
 }
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Random fortune
+fortune

@@ -96,9 +96,9 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Set workspace names
-set $workspace1 "1 | "
-set $workspace2 "2 |  "
-set $workspace10 "10 | ♪"
+set $workspace1 "1|"
+set $workspace2 "2| "
+set $workspace10 "10|♪"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -112,6 +112,10 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace $workspace10
 
+# Switch to next/previous workspace
+bindsym $mod+Ctrl+Left workspace prev 
+bindsym $mod+Ctrl+Right workspace next
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
@@ -123,6 +127,7 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace $workspace10
+
 
 # Workspace-specific applications
 assign [class="Firefox"] $workspace2
@@ -159,22 +164,21 @@ mode "resize" {
 }
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 
 # Sreen brightness controls
-# Don't work for now, need to set it up
-bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10 # decrease screen brightness
 
 bindsym $mod+r mode "resize"
 
-# Lock on Ctrl+Alt+L
-bindsym control+mod1+l exec i3lock -i ~/Pictures/lock.png -t
+# Lock on Ctrl+Mod+L
+bindsym control+mod1+l exec --no-startup-id i3lock -i ~/Pictures/lock.png -t
 
 # Printscreen
-bindsym Print exec gnome-screenshot -i
+bindsym Print exec --no-startup-id gnome-screenshot -i
 
 #### i3-gaps specific section ####
 
@@ -182,10 +186,10 @@ bindsym Print exec gnome-screenshot -i
 for_window [class="^.*"] border pixel 0
 
 # Disable gaps if there's only one window on
-# smart_gaps on
+# smart_gaps off
 
-gaps inner 15
-gaps outer 5
+gaps inner 7
+gaps outer 0
 
 #### end of i3-gaps ####
 
@@ -200,7 +204,7 @@ bar {
             separator #666666
             background #222222
             statusline #dddddd
-            focused_workspace #459CD6 #459CD6 #ffffff
+            focused_workspace #D95763 #D95763  #ffffff
             active_workspace #333333 #333333 #ffffff
             inactive_workspace #333333 #333333 #888888
             urgent_workspace #2f343a #D69045 #ffffff
@@ -211,7 +215,6 @@ bar {
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Wallpaper
-# exec_always --no-startup-id feh --bg-scale /home/navenn_t/Pictures/wallpaper.jpg
 exec --no-startup-id nitrogen --restore
 
 # start nm-applet

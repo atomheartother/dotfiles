@@ -2,7 +2,7 @@
 
 echo "We will cleans then in purifying fires c:"
 
-time find . -name '*~' -print -delete
+time find . \( -name '*~' -o -name ".#*" \) -print -delete
 
 echo "
 They died screaming c:"

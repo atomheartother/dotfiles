@@ -5,7 +5,7 @@ helper = {}
 
 -- template variables
 local color_preset_dark = {
-  icon      = '#459CD6',
+  icon      = '#D95763',
   text      = '#5c5dad',
   separator = '#5c5dad',
   value     = '#aaaaaa'

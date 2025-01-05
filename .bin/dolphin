@@ -1,1 +1,3 @@
-/home/navenn_t/Games/FasterMelee-5.7/bin/dolphin-emu
+#!/bin/bash
+
+optirun /home/navenn_t/Games/launch-fm

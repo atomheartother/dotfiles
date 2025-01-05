@@ -12,7 +12,7 @@ local ci = color_indicator_dark
 parts.time = helper.value('${time %H:%M }', nil)
 
 -- Date
-parts.date = helper.value('${time %D}', nil)
+parts.date = helper.value('${time %d.%m.%Y}', nil)
 
 -- local volume_command = [[amixer sget Master,0 | egrep -o '([0-9]+%)' | head -n 1 | sed ':a;N;$!ba;s/\n/ /g']]
 local volume_command = [[pactl list sinks | grep '^]] .. "[[:space:]]Volume:' |" .. [[head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,']]
