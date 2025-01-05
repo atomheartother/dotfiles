@@ -71,6 +71,9 @@ set relativenumber
 " Open gitfiles with Ctrl+P
 nnoremap <C-p> :<C-u>:GFiles<CR>
 
+" Escale from terminal mode with ESC
+tnoremap <C-Esc> <C-\><C-n>
+
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=300
@@ -168,7 +171,7 @@ require('lspconfig')['ccls'].setup{
     flags = lsp_flags,
     capabilities = capabilities,
 }
-require('lspconfig')['tsserver'].setup{
+require('lspconfig')['ts_ls'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
     capabilities = capabilities,
