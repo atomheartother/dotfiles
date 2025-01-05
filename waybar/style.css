@@ -39,13 +39,13 @@ window#waybar {
 }
 
 #pulseaudio {
-  background: #c6a059;
+  background: #37b78a;
   color: rgba(26, 30, 35, 1);
 }
 
 #pulseaudio.muted {
   background: none;
-  color: #c6a059;
+  color: #37b78a;
 }
 
 #battery.charging {
