@@ -9,4 +9,4 @@ elif [ $# -ge 1 ]; then
 fi
 
 branch="$(git symbolic-ref --short -q HEAD)"
-git push origin $branch && echo "I pushed them all, are you proud? ^///^"
+git push origin $branch

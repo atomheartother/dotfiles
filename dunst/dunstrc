@@ -140,3 +140,7 @@
     background = "#ffffff"
     foreground = "#940000"
     new_icon = FileZilla
+
+[NetworkManager]
+    appname = NetworkManager
+    new_icon = network-wireless
