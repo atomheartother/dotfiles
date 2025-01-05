@@ -52,7 +52,7 @@
             "warning": 30,
             "critical": 10
         },
-        "format": "♡ {capacity}%",
+        "format": "{capacity}% ♥",
         "format-charging": "♥ {capacity}%",
         "format-plugged": "   ♥   ",
         "format-alt": "{time}",
@@ -71,7 +71,7 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "𝅘𝅥𝅮  {volume}%",
-        "format-muted": "off",
+        "format-muted": "𝅘𝅥𝅮  off",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-icons": {
