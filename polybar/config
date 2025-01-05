@@ -68,7 +68,7 @@ font-2 = FontAwesome:pixelsize=10;1
 
 modules-left = i3
 modules-center = date
-modules-right = pulseaudio xkeyboard gmail battery
+modules-right = pulseaudio xkeyboard battery
 
 tray-position = right
 tray-padding = ${size.padding}
@@ -257,31 +257,6 @@ animation-charging-3 = ${self.ramp-capacity-3}
 animation-charging-4 = ${self.ramp-capacity-4}
 animation-charging-foreground = ${colors.secondary}
 animation-charging-framerate = 750
-
-[module/gmail]
-type = custom/script
-exec = ~/.config/polybar/gmail/launch.py
-tail = true
-click-left = xdg-open https://mail.google.com/mail/u/0/
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-; format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-; format-warn-underline = ${self.format-underline}
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
 
 [settings]
 screenchange-reload = true
