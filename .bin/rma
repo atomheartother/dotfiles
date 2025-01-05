@@ -1,5 +1,8 @@
 #!/bin/bash
 
-echo "We will cleanse them in purifying fires c:"
-find -type f -name "*~" -delete -print -o -type f -name "\#*\#" -delete -print
-echo "All temp files deleted! They died screaming c:"
+echo "We will cleans then in purifying fires c:"
+
+time find . -name '*~' -print -delete
+
+echo "
+They died screaming c:"

@@ -9,17 +9,17 @@ cprogs=("batteryd")
 for i in "${configs[@]}"
 do
     :
-    cp -r ~/.config/$i ~/dotfiles/$i
+    cp -r ~/.config/$i ~/dotfiles/
 done
 
 for i in "${homes[@]}"
 do
     :
-    cp -r ~/$i ~/dotfiles/$i
+    cp -r ~/$i ~/dotfiles/
 done
 
 for i in "${cprogs[@]}"
 do
     :
-    cp -r ~/Programming/c/$i ~/dotfiles/$i
+    cp -r ~/Programming/c/$i ~/dotfiles/
 done

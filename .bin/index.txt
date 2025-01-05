@@ -1,6 +1,8 @@
 asm:		Compile assembly fast
 badmalloc:	LD_PRELOAD a malloc that returns NULL. Source contained in data/
 gitclone:	Quick pull an epitech repo through blih.
+loliance:	10/10 would snuggle
+lollecul:	lol
 mkcpp:		C++ made easy
 pping:		Quick ping to google
 prepdir:	Loads C library, includes, Makefile in current folder

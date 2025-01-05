@@ -1,6 +1,5 @@
 #!/bin/bash
 
-make fclean
 git add --all
 
 if [ $# -eq 0 ]; then
@@ -9,5 +8,4 @@ elif [ $# -ge 1 ]; then
 git commit -am "${1}"
 fi
 
-git push origin master
-echo I pushed them all, are you proud? ^///^
+git push origin master && echo "I pushed them all, are you proud? ^///^"

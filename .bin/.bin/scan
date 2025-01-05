@@ -1,7 +1,0 @@
-#!/bin/bash
-
-if [ $# -eq 0 ]; then
-    sudo arp-scan --interface=wlo1 --localnet
-else
-    sudo arp-scan --interface=$1 --localnet
-fi

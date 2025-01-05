@@ -16,7 +16,7 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#002b36"
+    background_color = "#002129"
     background_darkness = 0.95
     copy_on_selection = True
     cursor_color = "#fe4c4c"
