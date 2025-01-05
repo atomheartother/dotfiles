@@ -262,7 +262,7 @@ animation-charging-framerate = 750
 type = custom/script
 exec = ~/.config/polybar/gmail/launch.py
 tail = true
-click-left = xdg-open https://mail.google.com/mail/u/1/
+click-left = xdg-open https://mail.google.com/mail/u/0/
 
 [module/temperature]
 type = internal/temperature
