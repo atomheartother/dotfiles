@@ -26,7 +26,6 @@
     copy_on_selection = True
     cursor_color = "#fe4c4c"
     cursor_color_fg = False
-    cursor_shape = underline
     font = Hack 11
     foreground_color = "#eeeeec"
     icon_bell = False

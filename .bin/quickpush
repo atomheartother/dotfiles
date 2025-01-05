@@ -1,11 +1,12 @@
 #!/bin/bash
 
-git add --all
+git add -A
 
 if [ $# -eq 0 ]; then
-git commit -am "Automated commit, no comment"
+	git commit -am "Quick fix, no comment"
 elif [ $# -ge 1 ]; then
-git commit -am "${1}"
+	git commit -am "${1}"
 fi
 
-git push origin master && echo "I pushed them all, are you proud? ^///^"
+branch="$(git symbolic-ref --short -q HEAD)"
+git push origin $branch && echo "I pushed them all, are you proud? ^///^"

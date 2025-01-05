@@ -113,7 +113,7 @@
     timeout = 5
 
 [urgency_normal]
-    background = "#79acac"
+    background = "#5AADAD"
     foreground = "#fafafa"
     transparency = 10
     timeout = 3
@@ -134,3 +134,9 @@
     background = "#ffffff"
     foreground = "#4280c2"
     new_icon = qBittorrent
+
+[FileZilla]
+    appname = FileZilla
+    background = "#ffffff"
+    foreground = "#940000"
+    new_icon = FileZilla

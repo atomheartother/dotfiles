@@ -1,9 +1,18 @@
 #!/bin/bash
 
+if [ ! -f "./CMakeLists.txt" ]; then
+	echo "I couldn't find a CMakeLists.txt"
+	exit
+fi
+
 if [ ! -d "./build" ]; then
     mkdir build
 else
     rm -rf build/*
 fi
 
-cd build && cmake .. $@ && make -j6
+(cd build && cmake .. $@ && make -j6) || exit
+
+if [ -f "./build/CTestTestfile.cmake" ]; then
+	cd build/ && ctest		
+fi

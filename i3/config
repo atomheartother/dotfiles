@@ -99,7 +99,7 @@ bindsym $mod+a focus parent
 
 # Set workspace names
 set $workspace1 "1|"
-set $workspace2 "2| "
+set $workspace2 "2|"
 set $workspace10 "10|♪"
 
 # switch to workspace
