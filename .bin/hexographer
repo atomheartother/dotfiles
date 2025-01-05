@@ -1,2 +1,0 @@
-#!/bin/bash
-java -jar -Xmx2000M ~/Games/Hexographer/hexographer.jar

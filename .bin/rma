@@ -1,8 +1,0 @@
-#!/bin/bash
-
-echo "We will cleans then in purifying fires c:"
-
-time find . \( -name '*~' -o -name ".#*" \) -print -delete
-
-echo "
-They died screaming c:"
