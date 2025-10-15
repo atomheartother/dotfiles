@@ -18,7 +18,9 @@ set $term wezterm
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu j4-dmenu-desktop --dmenu='bemenu run -i --fn "IBM Plex Mono 32" -p "" --scb "#00000000" --scf "#00000000" --ff "#00000000" --fb "#00000000" --nb "#00000000" --hb "#00000000"  --sb "#00000000" -l 10 -M 100 --cf "#00000000" --ff "#FFFFFF" --fb "#00000000" --ab "#00000000"' --term='terminator'
+set $menuold j4-dmenu-desktop --dmenu='bemenu run -i --fn "IBM Plex Mono 32" -p "" --scb "#00000000" --scf "#00000000" --ff "#00000000" --fb "#00000000" --nb "#00000000" --hb "#00000000"  --sb "#00000000" -l 10 -M 100 --cf "#00000000" --ff "#FFFFFF" --fb "#00000000" --ab "#00000000"' --term='terminator'
+set $menu fuzzel -b 1d2021e0 -C 3c3836ff -B 2 -s 18192600 -t 928374ff -M b8bb26ff -S b8bb26a0 -m b8bb26a0 --prompt-color=928374ff  --input-color=fffffff
+
 set $wpDir /usr/share/backgrounds/wallpapers
 
 ### Output configuration
@@ -26,7 +28,7 @@ set $wpDir /usr/share/backgrounds/wallpapers
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg `ls $wpDir/* | sort -R | head -n 1` fill
 #
-# Example configuration:
+
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
@@ -80,6 +82,7 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
     bindsym $mod+Shift+q kill
 
     # Start your launcher
+    bindsym $mod+x exec $menuold
     bindsym $mod+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
@@ -172,15 +175,11 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
     bindsym $mod+a focus parent
 
 # Gaps
-gaps inner 10
-smart_gaps on
+smart_gaps off
+gaps outer 0
+gaps inner 20
 
-# Remove window titlebar and border
-for_window [class="^.*"] border none
-hide_edge_borders both
-default_border none
-
-
+default_border pixel 0
 #
 # Scratchpad:
 #
@@ -223,8 +222,9 @@ bindsym $mod+r mode "resize"
 #
 
 input type:keyboard {
-    xkb_layout us,fr
-    xkb_options grp:alt_shift_toggle
+    xkb_layout us
+    # xkb_layout us,fr
+    # xkb_options grp:alt_shift_toggle
 }
 
 #
@@ -249,9 +249,6 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10 # decrease screen
 
 # Switch between fr and us
 exec --no-startup-id setxkbmap -option grp:alt_shift_toggle us,fr
-
-# Notifications with mako
-exec mako
 
 include /etc/sway/config.d/*
 

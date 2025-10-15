@@ -11,8 +11,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Color scheme
-Plug 'sainnhe/sonokai'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'morhetz/gruvbox'
 
 " View git modifications
 Plug 'airblade/vim-gitgutter'
@@ -21,7 +21,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 
 Plug 'neovim/nvim-lspconfig'
-
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -31,13 +30,11 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
-Plug 'folke/trouble.nvim'
-" For trouble's icons
-Plug 'nvim-tree/nvim-web-devicons'
-
 " Tree sitter for generic language parsing
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+Plug 'tribela/vim-transparent'
 
 " Initialize plugin system
 call plug#end()
@@ -62,7 +59,9 @@ let g:netrw_banner=0
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+,\(^\|\s\s\)ntuser\.\S\+'
 autocmd FileType netrw set nolist
 
-colorscheme catppuccin-macchiato
+set background=dark
+" colorscheme catppuccin-macchiato
+colorscheme gruvbox
 
 " Display line numbers
 set number
@@ -117,10 +116,7 @@ local on_attach = function(client, bufnr)
     -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
   vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
   vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
@@ -129,8 +125,6 @@ local on_attach = function(client, bufnr)
   end, bufopts)
   vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
@@ -161,41 +155,44 @@ cmp.setup({
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require('lspconfig')['pyright'].setup{
+vim.lsp.config('pyright', {
     on_attach = on_attach,
     flags = lsp_flags,
     capabilities = capabilities,
-}
-require('lspconfig')['ccls'].setup{
+})
+vim.lsp.config('ccls', {
     on_attach = on_attach,
     flags = lsp_flags,
     capabilities = capabilities,
-}
-require('lspconfig')['ts_ls'].setup{
+})
+vim.lsp.config('ts_ls', {
     on_attach = on_attach,
     flags = lsp_flags,
     capabilities = capabilities,
-}
-require('lspconfig')['eslint'].setup{
+})
+vim.lsp.config('eslint', {
   on_attach=on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
-}
+})
 
-require('lspconfig')['hls'].setup{
+vim.lsp.config('hls', {
   on_attach=on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
   filetypes = { 'haskell', 'lhaskell', 'cabal' },
-}
+})
 
-require('lspconfig').bright_script.setup{}
+vim.lsp.config('dartls', {
+  on_attach=on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+})
 
 
 -- Set up treesitter
 require'nvim-treesitter.configs'.setup {
-  -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "tsx", "typescript", "javascript", "bash"},
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -227,17 +224,25 @@ require'nvim-treesitter.configs'.setup {
   },
   indent = {
     enable = true
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "<C-space>",
+      node_incremental = "<C-space>",
+      scope_incremental = false,
+      node_decremental = "<bs>",
+    },
   }
 }
-
 -- Custom tree-sitter highlighting
-local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-parser_config.bend= {
-  install_info = {
-    url = "/home/navenn_t/Programming/Personal/tree-sitter-bend", -- local path or git repo
-    files = {"src/parser.c"}, -- note that some parsers also require src/scanner.c or src/scanner.cc
-	branch = "main", -- default branch in case of git repo if different from master
-  }
-}
+-- local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+-- parser_config.bend= {
+--   install_info = {
+--     url = "/home/navenn_t/Programming/Personal/tree-sitter-bend", -- local path or git repo
+--     files = {"src/parser.c"}, -- note that some parsers also require src/scanner.c or src/scanner.cc
+-- 	branch = "main", -- default branch in case of git repo if different from master
+--   }
+-- }
 
 EOF
