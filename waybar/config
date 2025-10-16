@@ -64,7 +64,7 @@
             "car": "󰄋",
             "default": ["󰕿", "󰖀", "󰕾"]
         },
-        "on-click": "pavucontrol",
-        "on-click-right": "blueman-manager",
+        "on-click": "wezterm start pulsemixer",
+        "on-click-right": "wezterm start bluetuith",
     },
 }
