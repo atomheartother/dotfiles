@@ -16,7 +16,7 @@
         "paused": "",
         "stopped": ""
       },
-      "dynamic-order": ["artist", "album"],
+      "dynamic-order": ["artist", "title"],
       "dynamic-separator": " - "
     },
     "pulseaudio/slider": {
