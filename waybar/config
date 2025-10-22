@@ -4,10 +4,25 @@
     "height": 20, // Waybar height (to be removed for auto height)
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": [],
-    "modules-right": ["pulseaudio", "network", "battery", "clock"],
+    "modules-center": ["mpris"],
+    "modules-right": ["pulseaudio", "pulseaudio/slider", "network", "battery", "clock"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
+    },
+    "mpris": {
+      "format": "{status_icon} {dynamic}",
+      "status-icons": {
+        "playing": "",
+        "paused": "",
+        "stopped": ""
+      },
+      "dynamic-order": ["artist", "album"],
+      "dynamic-separator": " - "
+    },
+    "pulseaudio/slider": {
+      "orientation": "horizontal",
+      "min": 0,
+      "max": 100
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -38,7 +53,7 @@
         "format-charging": "<span size=\"large\">󰂄</span> <span weight=\"bold\">{capacity}%</span>",
         "format-plugged-full": "<span size=\"large\">  </span>",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        "interval": 5,
+        "interval": 1,
         "tooltip-format": "{time}",
         "tooltip-format-plugged": "{cycles} cycles, Health: {health}%"
     },
@@ -51,10 +66,10 @@
         "tooltip-format-wifi": "{signalStrength}% - {ipaddr}",
     },
     "pulseaudio": {
-        "format": "<span size=\"x-large\">{icon}</span> {volume}%",
-        "format-muted": "<span size=\"x-large\">󰖁</span> off",
-        "format-bluetooth": "<span size=\"large\">󰂯</span> {icon} {volume}%",
-        "format-bluetooth-muted": "<span size=\"x-large\">󰝟</span> off",
+        "format": "<span size=\"x-large\">{icon}</span>",
+        "format-muted": "<span size=\"x-large\">󰖁</span>",
+        "format-bluetooth": "<span size=\"large\">󰂯</span>",
+        "format-bluetooth-muted": "<span size=\"x-large\">󰖁</span>",
         "format-icons": {
             "headphone": "󰋋",
             "hands-free": "󰋋",
